@@ -26,7 +26,7 @@ public class Test {
 
 	public static void main(String[] args) {
 
-//		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
+//		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();11
 //		for (int i = 0; i < urls.length; i++) {
 //			System.out.println(urls[i].toExternalForm());
 //		}
@@ -41,7 +41,7 @@ public class Test {
 //
 //		System.out.println(System.class.getClassLoader());
 //		
-//		String s = "ÖÐÎÄ";
+//		String s = "ä¸­æ–‡";
 //
 //		try {
 //			byte[] b = s.getBytes("GB2312");
@@ -89,10 +89,10 @@ public class Test {
 		
 //		try {
 //			String s = "\u5317\u4EAC\u5E02";
-////			String s = "±±¾©ÊÐ";//unicode [-2, -1, 83, 23, 78, -84, 94, 2] //utf-8 [-27, -116, -105, -28, -70, -84, -27, -72, -126]
+////			String s = "åŒ—äº¬å¸‚";//unicode [-2, -1, 83, 23, 78, -84, 94, 2] //utf-8 [-27, -116, -105, -28, -70, -84, -27, -72, -126]
 //			byte[] b = s.getBytes("utf-8");          // [-28, -72, -83, -27, -101, -67, -27, -116, -105, -28, -70, -84, -27, -72, -126]  
 //			        // [-28, -72, -106, -25, -107, -116, -28, -72, -83, -27, -101, -67, -27, -116, -105, -28, -70, -84, -27, -72, -126]
-////			System.out.println(s);                                            //&#x4E2D;&#x56FD;&#x5317;&#x4EAC;&#x5E02; //B1B1  5317  E5 8C 97  ±±
+////			System.out.println(s);                                            //&#x4E2D;&#x56FD;&#x5317;&#x4EAC;&#x5E02; //B1B1  5317  E5 8C 97  åŒ—
 ////			System.out.println(new String(b, "utf-8"));
 ////			URLDecoder.decode("xxxxxx", "UTF-8");
 //			System.out.println(URLDecoder.decode("&#x5317;&#x4EAC;&#x5E02;", "UTF-8"));
@@ -102,7 +102,7 @@ public class Test {
 //		}
 		
 		
-//		String s = "¹þ×Ó12ab c";
+//		String s = "å“ˆå­12ab c";
 //		StringBuffer sb = new StringBuffer();
 //		for (int i = 0; i < s.length(); i++) {
 ////			System.out.println(s.charAt(i));
@@ -159,7 +159,7 @@ public class Test {
 		
 //		AjaxResultObject a = new AjaxResultObject();
 //		a.setStatus(AjaxResultObject.STATUS_FAIL);
-//		a.setResult("ÖÐÎÄ");
+//		a.setResult("ä¸­æ–‡");
 //		String s = a.toJson();
 //		System.out.println(s);
 		
@@ -178,7 +178,7 @@ public class Test {
 //		System.out.println(map.get(count / 2));
 //		long b = System.currentTimeMillis();
 //		System.out.println("time: " + (b - a));
-//		System.out.println(includeChnSymbol("£¡"));
+//		System.out.println(includeChnSymbol("ï¼"));
 //		float p = 1.0f;
 //		for (int j = 0; j <= 50; j = j + 2) {
 //			float f = 1.0f;
@@ -194,14 +194,14 @@ public class Test {
 	}
 	
 	private static boolean includeChnSymbol(String s) {
-		String regex = "[£¬¡££¿£¡~¡­¡­£º£»¡¢@#£¤¡°¡±£¨£©¡¶¡·¡ª¡ª]";
+		String regex = "[ï¼Œã€‚ï¼Ÿï¼~â€¦â€¦ï¼šï¼›ã€@#ï¿¥â€œâ€ï¼ˆï¼‰ã€Šã€‹â€”â€”]";
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(s);
 		return m.matches();
 	}
 	
 	private boolean includeChnSymbol(char c) {
-		String regex = "[£¬¡££¿£¡~¡­¡­£º£»¡¢@#£¤¡°¡±£¨£©¡¶¡·¡ª¡ª]";
+		String regex = "[ï¼Œã€‚ï¼Ÿï¼~â€¦â€¦ï¼šï¼›ã€@#ï¿¥â€œâ€ï¼ˆï¼‰ã€Šã€‹â€”â€”]";
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(String.valueOf(c));
 		return m.matches();
@@ -238,7 +238,7 @@ public class Test {
 	public static org.dom4j.Document load() {
 		org.dom4j.Document doc = null;
 		SAXReader saxReader = new SAXReader();
-		// ¶ÁÈ¡XMLÎÄµµ¶ÔÏó
+		// è¯»å–XMLæ–‡æ¡£å¯¹è±¡
 		try {
 			doc = saxReader.read(new FileInputStream("D:\\test\\mdm_auto_account.xml"));
 		} catch (FileNotFoundException e) {
